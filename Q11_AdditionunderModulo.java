@@ -33,7 +33,7 @@ class Q11_AdditionunderModulo
 
 class Solution {
     public static long sumUnderModulo(long a, long b){
-        // code her
+        // write this code only 
         long mod = 1000000007;
         return ((a % mod) + (b % mod)) % mod;
     }   

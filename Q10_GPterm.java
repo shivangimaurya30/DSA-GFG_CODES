@@ -3,6 +3,7 @@ import java.util.*;
 public class Q10_GPterm {    
     public double termOfGP(int A,int B,int N)
     {
+	    //write this code!
         double r = (double) B / A;
         double term = A * Math.pow(r, N - 1);
         

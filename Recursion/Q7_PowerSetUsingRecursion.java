@@ -2,7 +2,6 @@
 class LexSort
 
     {
-        // add your code here
          static ArrayList<String> powerSet(String s)
     {
         // add your code here

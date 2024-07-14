@@ -1,34 +1,3 @@
-//{ Driver Code Starts
-//Initial Template for Java
-
-import java.util.*;
-import java.io.*;
-import java.lang.*;
-
-class gfg
-{
-    static int a[] = new int[1000001];
-    
-    public static void main(String args[])
-    {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        
-        while(t-- > 0)
-        {
-            int n = sc.nextInt();
-            for(int i = 0; i < n; i++)
-              a[i]=  sc.nextInt();
-            Solution sol=new Solution();
-            int res[]=sol.solve(n,a);
-            System.out.println(res[0]+" "+res[1]);
-        }
-    }
-    
-}
-
-// } Driver Code Ends
-//User function Template for Java
 class Solution
 {
     public int[] solve(int N, int a[])
@@ -53,7 +22,3 @@ class Solution
         return new int[]{repeating, missing};
      }
 }
-
-//{ Driver Code Starts.
-
-// } Driver Code Ends

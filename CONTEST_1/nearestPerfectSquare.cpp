@@ -1,10 +1,3 @@
-//{ Driver Code Starts
-#include<bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
-
 class Solution {
   public:
     long long nearestPerfectSquare(long long n) {
@@ -24,24 +17,3 @@ class Solution {
 	}
     }
 };
-
-
-//{ Driver Code Starts.
-
-int main(){
-    int t;
-    scanf("%d ",&t);
-    while(t--){
-        
-        long long n;
-        scanf("%lld",&n);
-        
-        Solution obj;
-        long long res = obj.nearestPerfectSquare(n);
-        
-        cout<<res<<endl;
-        
-    }
-}
-
-// } Driver Code Ends

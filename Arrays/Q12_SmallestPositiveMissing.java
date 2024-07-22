@@ -12,15 +12,11 @@ class Solution
                 arr[i] = temp;
             }
         }
-        
-        // Step 2: Find the first index where arr[i] != i + 1
         for (int i = 0; i < size; i++) {
             if (arr[i] != i + 1) {
                 return i + 1;
             }
         }
-        
-        // If all elements are in place, the missing number is size + 1
         return size + 1;
     }
 }

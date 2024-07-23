@@ -28,4 +28,7 @@ class Solution{
             totalWater += Math.min(leftMax[i], rightMax[i]) - arr[i];
         }
 
-      
+       return totalWater;
+    }
+}
+

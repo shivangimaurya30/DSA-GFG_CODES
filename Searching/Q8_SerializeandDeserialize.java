@@ -1,58 +1,47 @@
-/* A binary tree node has data, pointer to left child
-   and a pointer to right child  
-struct Node
-{
-    int data;
-    Node* left;
-    Node* right;
-}; */
+class Tree {
+    // Function to serialize a tree and return a list containing nodes of tree.
+    public ArrayList<Integer> serialize(Node root) {
+        ArrayList<Integer> result = new ArrayList<>();
+        if (root == null) return result;
 
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
 
-class Solution {
-public:
-    vector<int> serialize(Node *root) {
-        vector<int> result;
-        if (root == NULL) return result;
+        while (!q.isEmpty()) {
+            Node curr = q.poll();
 
-        queue<Node *> q;
-        q.push(root);
-
-        while (!q.empty()) {
-            Node *curr = q.front();
-            q.pop();
-
-            if (curr == NULL) {
-                result.push_back(-1);
+            if (curr == null) {
+                result.add(-1);
             } else {
-                result.push_back(curr->data);
-                q.push(curr->left);
-                q.push(curr->right);
+                result.add(curr.data);
+                q.add(curr.left);
+                q.add(curr.right);
             }
         }
         return result;
     }
 
-    Node *deSerialize(vector<int> &data) {
-        if (data.size() == 0) return NULL;
+    // Function to deserialize a list and construct the tree.
+    public Node deSerialize(ArrayList<Integer> data) {
+        if (data.size() == 0) return null;
 
-        Node *root = new Node(data[0]);
-        queue<Node *> q;
-        q.push(root);
+        Node root = new Node(data.get(0));
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
 
         int i = 1;
-        while (!q.empty()) {
-            Node *curr = q.front();
-            q.pop();
+        while (!q.isEmpty()) {
+            Node curr = q.poll();
 
-            if (data[i] != -1) {
-                curr->left = new Node(data[i]);
-                q.push(curr->left);
+            if (data.get(i) != -1) {
+                curr.left = new Node(data.get(i));
+                q.add(curr.left);
             }
             i++;
 
-            if (data[i] != -1) {
-                curr->right = new Node(data[i]);
-                q.push(curr->right);
+            if (i < data.size() && data.get(i) != -1) {
+                curr.right = new Node(data.get(i));
+                q.add(curr.right);
             }
             i++;
         }
